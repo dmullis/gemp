@@ -6,10 +6,10 @@ take the place of the template file.
 
 ```sh
      $ KV=User=$USER\ TimeHMS="$(date +%H:%M:%S)"
-     $ gemp -format 'export const %s = "%s";'$'' $KV dump
+     $ gemp -format 'export const %s = "%s";'$'' $KV dump  # emit JavaScript
      export const User = "dmullis";
      export const TimeHMS = "20:41:06";
-     $ gemp -format 'const %s = "%s"'$'' $KV dump
+     $ gemp -format 'const %s = "%s"'$'' $KV dump   # emit Go
      const User = "dmullis"
      const TimeHMS = "20:41:06"
 ```

@@ -6,13 +6,14 @@
 <!-- [Donald Mullis](https://github.com/dmullis)
  -->
 
-# gemp: A Modest Template Processor
+# gemp: A Recursive CLI Expander of Go Template Files
 
 Gemp reads pairs specifying Key-to-list-of-Value mappings K=V1,V2...Vn,
 and stores them for reformatting as directed by a specific command.
 
-Gemp provides two commands, *gen* and *dump*,
-each with various uses.
+Use cases are generation of source code variants differing only by simple substitution,
+but possibly many combinations of values.
+Substitutions are performed by Go's ```text/template``` standard library.
 
 For trivial examples, read on.
 ## gen
@@ -40,9 +41,9 @@ specific combination of values:
 Format of the template file is as
 specified in a Go standard library [template file](https://golang.org/pkg/text/template).
 Usable functionality from ```template``` is constrained by gemp's limitation that the data structure
-presented to the standard library's *Execute()* method is only a list of Key=Value
+presented to the standard library's ```Execute()``` method is only a list of Key=Value
 pairs, both Key and Value of string type.
-A call is made to *Execute()* for each Value in the comma-separated value list Value+.
+A call is made to ```Execute()``` for each Value in the comma-separated value list Value+.
 ## dump
 ### Matching Constant Definitions Across Languages
 
@@ -52,10 +53,10 @@ take the place of the template file.
 
 ```sh
      $ KV=User=$USER\ TimeHMS="$(date +%H:%M:%S)"
-     $ gemp -format 'export const %s = "%s";'$'' $KV dump
+     $ gemp -format 'export const %s = "%s";'$'' $KV dump  # emit JavaScript
      export const User = "dmullis";
      export const TimeHMS = "20:41:06";
-     $ gemp -format 'const %s = "%s"'$'' $KV dump
+     $ gemp -format 'const %s = "%s"'$'' $KV dump   # emit Go
      const User = "dmullis"
      const TimeHMS = "20:41:06"
 ```

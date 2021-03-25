@@ -6,12 +6,13 @@
 <!-- [Donald Mullis](https://github.com/dmullis)
  -->
 
-# gemp: A Modest Template Processor
+# gemp: A Recursive CLI Expander of Go Template Files
 
 Gemp reads pairs specifying Key-to-list-of-Value mappings K=V1,V2...Vn,
 and stores them for reformatting as directed by a specific command.
 
-Gemp provides two commands, *gen* and *dump*,
-each with various uses.
+Use cases are generation of source code variants differing only by simple substitution,
+but possibly many combinations of values.
+Substitutions are performed by Go's ```text/template``` standard library.
 
 For trivial examples, read on.

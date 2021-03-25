@@ -22,6 +22,6 @@ specific combination of values:
 Format of the template file is as
 specified in a Go standard library [template file](https://golang.org/pkg/text/template).
 Usable functionality from ```template``` is constrained by gemp's limitation that the data structure
-presented to the standard library's *Execute()* method is only a list of Key=Value
+presented to the standard library's ```Execute()``` method is only a list of Key=Value
 pairs, both Key and Value of string type.
-A call is made to *Execute()* for each Value in the comma-separated value list Value+.
+A call is made to ```Execute()``` for each Value in the comma-separated value list Value+.
