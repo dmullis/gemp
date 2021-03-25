@@ -34,10 +34,11 @@ echo '    dlv debug '$PWD' -- GEMP_ARGS ...'
 gemp -helpAsMarkdown -h     2>doc/usage.md
 gemp -helpAsMarkdown -h gen 2>doc/gen-usage.md
 
-# Alternative, Golang-based Markdown processors:
-#    1.  'blackfriday'.
+# Alternative Markdown processors:
+#    1.  'blackfriday'
 #    2.  https://pkg.go.dev/github.com/shurcooL/github_flavored_markdown
 #        https://github.com/shurcooL/github_flavored_markdown/issues
+#    3.  https://docs.github.com/en/rest/reference/markdown
 for mdFile in README.md doc/usage.md doc/gen-usage.md
 do
     #  --gfm => "GitHub-Flavored-Markdown"

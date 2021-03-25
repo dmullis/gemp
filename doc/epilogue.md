@@ -1,8 +1,8 @@
 ### Usage
 
-[Generic](doc/usage.html) to both *gen* and *dump* commands.
+[Generic](./doc/usage.md) to both *gen* and *dump* commands.
 
-[Specific to *gen*](doc/gen-usage.html).
+[Specific to *gen*](./doc/gen-usage.md).
 
 If generating program source code, two difficulties may appear:
  1. For a satisfactory experience when debugging stack traces,

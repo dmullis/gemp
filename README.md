@@ -1,5 +1,3 @@
-# gemp
-=======
 <!-- Copyright 2020 Donald Mullis. All rights reserved.
      https://github.github.com/gfm/
   -->
@@ -63,9 +61,9 @@ take the place of the template file.
 ```
 ### Usage
 
-[Generic](doc/usage.html) to both *gen* and *dump* commands.
+[Generic](./doc/usage.md) to both *gen* and *dump* commands.
 
-[Specific to *gen*](doc/gen-usage.html).
+[Specific to *gen*](./doc/gen-usage.md).
 
 If generating program source code, two difficulties may appear:
  1. For a satisfactory experience when debugging stack traces,
@@ -80,4 +78,3 @@ Workaround examples may be found in [```_test_src/```](./_test_src/).
 Other Go-based templating utilities, targeting somewhat different use cases:
  - [stringer](https://pkg.go.dev/golang.org/x/tools@v0.1.0/cmd/stringer)
  - [Kubernetes templates](https://pkg.go.dev/k8s.io/kubernetes/pkg/kubectl/util/templates)
-
