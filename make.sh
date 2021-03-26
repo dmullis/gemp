@@ -42,6 +42,8 @@ gemp -helpAsMarkdown -h gen 2>doc/gen-usage.md
 for mdFile in README.md doc/usage.md doc/gen-usage.md
 do
     #  --gfm => "GitHub-Flavored-Markdown"
+    #    XXX  Despite --gfm, does NOT transform link references to ".md" files into ".html", as
+    #         the GitHub website does. 
     marked --gfm $mdFile >${mdFile%%.*}.html
 done
 

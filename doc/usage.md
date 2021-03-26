@@ -1,4 +1,5 @@
 Usage:
+<!-- DO NOT MODIFY -- automatically generated -->
 ```
 gemp [-format=%-.s-%s] [-h=false] [-helpAsMarkdown=false] [-kvpluspath=] [-verbose=false] [K=V1,V2...Vn]* (gen [flags] input_file | dump)
 
@@ -25,6 +26,7 @@ gemp [-format=%-.s-%s] [-h=false] [-helpAsMarkdown=false] [-kvpluspath=] [-verbo
         Any number of Key=Value+ pairs, where Value+ may be a comma-
 	separated list of multiple string values to be substituted serially
 	into each of multiple output directories or files.
+
 ```
 
  gen
@@ -37,7 +39,7 @@ gemp [-format=%-.s-%s] [-h=false] [-helpAsMarkdown=false] [-kvpluspath=] [-verbo
   with successive files receiving V1,V2...Vn for substitution within
   the file.
   For 'gen'-specific help:
-      $ gemp _=_ gen
+      $ gemp -h gen
 
  dump
 

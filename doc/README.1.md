@@ -8,11 +8,12 @@
 
 # gemp: A Recursive CLI Expander of Go Template Files
 
-Gemp reads pairs specifying Key-to-list-of-Value mappings K=V1,V2...Vn,
-and stores them for reformatting as directed by a specific command.
+Gemp reads pairs specifying Key-to-list-of-Value mappings ```K=V1,V2...Vn```,
+and stores them for use according to the purpose of a specific subcommand
+```gen``` or ```dump```.
 
-Use cases are generation of source code variants differing only by simple substitution,
+Typical use cases are generation of source code variants differing only by simple substitution,
 but possibly many combinations of values.
-Substitutions are performed by Go's ```text/template``` standard library.
+Substitutions are performed by Go's ```text/template``` or ```fmt``` standard library packages.
 
 For trivial examples, read on.

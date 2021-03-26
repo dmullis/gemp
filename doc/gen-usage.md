@@ -25,6 +25,7 @@ command 'gen' usage:
   generation from any run of "go mod tidy" initiated at the root directory.
 
 
+<!-- DO NOT MODIFY -- automatically generated -->
 ```
 gemp [-format=%-.s-%s] [-h=false] [-helpAsMarkdown=false] [-kvpluspath=] [-verbose=false] [K=V1,V2...Vn]* (gen [flags] input_file | dump)
 
@@ -44,4 +45,5 @@ gemp [-format=%-.s-%s] [-h=false] [-helpAsMarkdown=false] [-kvpluspath=] [-verbo
   -outtopdir string
     	Top-level output directory to populate as directed by
     	templatepath. (default ".")
+
 ```

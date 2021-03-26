@@ -4,10 +4,17 @@ package internal
 
 import (
 	"bufio"
+	"fmt"
 	"io"
 	"log"
 	"os"
 )
+
+const MarkdownAutoGenMessage = "<!-- DO NOT MODIFY -- automatically generated -->"
+
+func ToggleCode(header string) {
+	fmt.Fprintf(os.Stderr, "%s\n```\n", header)
+}
 
 func CountLines(r *os.File) (count int) {
 	_, _ = r.Seek(0, 0)

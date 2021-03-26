@@ -86,14 +86,11 @@ func usage() {
 	fpf := func(format string, s ...interface{}) {
 		fmt.Fprintf(os.Stderr, format, s...)
 	}
-	toggleCode := func() {
-		if *helpAsMarkdown {
-			fmt.Fprintf(os.Stderr, "```\n")
-		}
-	}
 
 	fpf("Usage:\n")
-	toggleCode()
+	if *helpAsMarkdown {
+		internal.ToggleCode(internal.MarkdownAutoGenMessage)
+	}
 
 	fpf("%s", cliUsage())
 	flag.PrintDefaults()
@@ -104,7 +101,9 @@ func usage() {
 	separated list of multiple string values to be substituted serially
 	into each of multiple output directories or files.
 `)
-	toggleCode()
+	if *helpAsMarkdown {
+		internal.ToggleCode("")
+	}
 	commandSynopsis := `
  gen
 
@@ -116,7 +115,7 @@ func usage() {
   with successive files receiving V1,V2...Vn for substitution within
   the file.
   For 'gen'-specific help:
-      $ gemp _=_ gen
+      $ gemp -h gen
 
  dump
 

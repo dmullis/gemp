@@ -17,3 +17,4 @@ Workaround examples may be found in [```_test_src/```](./_test_src/).
 Other Go-based templating utilities, targeting somewhat different use cases:
  - [stringer](https://pkg.go.dev/golang.org/x/tools@v0.1.0/cmd/stringer)
  - [Kubernetes templates](https://pkg.go.dev/k8s.io/kubernetes/pkg/kubectl/util/templates)
+ - [gotpl](https://github.com/tsg/gotpl)

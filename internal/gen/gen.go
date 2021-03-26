@@ -116,16 +116,15 @@ type (
 )
 
 func UsageDump(helpAsMarkdown bool, cliUsage string) {
-	toggleCode := func() { // XX  DRY
-		if helpAsMarkdown {
-			fmt.Fprintf(os.Stderr, "```\n")
-		}
-	}
 	fmt.Fprintf(os.Stderr, "%s\n\n", usagePreamble)
-	toggleCode()
+	if helpAsMarkdown {
+		internal.ToggleCode(internal.MarkdownAutoGenMessage)
+	}
 	fmt.Fprintf(os.Stderr, "%s", cliUsage)
 	fs.PrintDefaults()
-	toggleCode()
+	if helpAsMarkdown {
+		internal.ToggleCode("")
+	}
 }
 
 func ParseArgs(genArgs []string, cliUsage string) (templLines int) {
@@ -138,6 +137,7 @@ func ParseArgs(genArgs []string, cliUsage string) (templLines int) {
 		UsageDump(false, cliUsage)
 		fmt.Fprintf(os.Stderr, "gen command args: '%v'\n\n", genArgs)
 		fmt.Fprintf(os.Stderr, "\n%s\n\n", why)
+		os.Exit(1)
 	}
 
 	// X Flags required to precede all args other than the initial templatePath.
